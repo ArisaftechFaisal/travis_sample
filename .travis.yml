@@ -7,13 +7,13 @@ services:
 - postgresql
 
 env:
-- DJANGO=2.2 DB=postgres
+- DJANGO=2.2 DB=postgres # one environment with two requisites
 
 install:
 - pip install -r requirements.txt
 
-before_script:
-- psql -c 'create database test;' -U root
+#before_script:
+#- psql -c 'create database test;' -U root #
 
 script:
-- python manage.py test
+- python manage.py test # run test scripts
