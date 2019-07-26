@@ -1,0 +1,20 @@
+language: python
+  python:
+    - "3.7"
+    - "3.5"
+
+  services:
+    - postgre
+
+  env:
+    - DJANGO=2.2 DB=postgre
+
+  install:
+    - pip install -r requirements.txt
+
+  before_script:
+    - postgre -e 'create database test;' -u root
+
+  script:
+
+    - python manage.py test
