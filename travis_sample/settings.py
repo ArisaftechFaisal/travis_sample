@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # custom
     'pages.apps.PagesConfig',
+    'listings.apps.ListingsConfig',
 ]
 
 MIDDLEWARE = [
@@ -78,8 +79,11 @@ WSGI_APPLICATION = 'travis_sample.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'btredb', # Database name
+        'USER': 'development',
+        'PASSWORD': '1234',
+        'HOST': 'localhost'
     }
 }
 
