@@ -4,7 +4,7 @@ python:
 - "3.5"
 
 services:
-- postgresql
+- mysql
 
 env:
 - DJANGO=2.2 DB=postgres # one environment with two requisites
